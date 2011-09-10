@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <!--
   ~ Copyright © 2011 Daniel Solano Gómez
   ~ All rights reserved.
@@ -31,27 +31,9 @@
   ~ THE POSSIBILITY OF SUCH DAMAGE.
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_height="fill_parent"
-              android:layout_width="fill_parent"
-              android:orientation="vertical">
-    <EditText android:layout_height="wrap_content"
-              android:layout_width="fill_parent"/>
-    <RadioGroup android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:orientation="vertical">
-        <RadioButton android:layout_height="wrap_content"
-                     android:layout_width="fill_parent"
-                     android:text="@string/celsius"
-                     android:checked="true"/>
-        <RadioButton android:layout_height="wrap_content"
-                     android:layout_width="fill_parent"
-                     android:text="@string/fahrenheit"/>
-        <RadioButton android:layout_height="wrap_content"
-                     android:layout_width="fill_parent"
-                     android:text="@string/kelvin"/>
-    </RadioGroup>
-    <Button android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="@string/convert"/>
-</LinearLayout>
+<resources>
+    <string name="celsius">Celsius</string>
+    <string name="convert">Convert!</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="kelvin">Kelvin</string>
+</resources>
