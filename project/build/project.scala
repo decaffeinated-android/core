@@ -22,6 +22,7 @@ class Parent(info: ProjectInfo) extends ParentProject(info) {
   override def updateAction = task { None }
 
   lazy val helloAndroid  = project("hello-android", "Hello, Android!", new MainProject(_))
+  lazy val converter  = project("converter", "Converter", new MainProject(_))
 
   class MainProject(info: ProjectInfo) extends AndroidProject(info) with Defaults
 }
