@@ -33,45 +33,10 @@ package com.decaffeinatedandroid.core.converter
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.ViewGroup
-import android.widget._
-
-import ViewGroup.LayoutParams._
 
 class ConverterActivity extends Activity {
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
-
-    val layout = new LinearLayout(this)
-    layout.setOrientation(LinearLayout.VERTICAL)
-
-    val defaultLayoutParams = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
-
-    val entry = new EditText(this)
-    layout.addView(entry, new LinearLayout.LayoutParams(defaultLayoutParams))
-
-    val radioGroup = new RadioGroup(this)
-    radioGroup.setOrientation(LinearLayout.VERTICAL)
-
-    val celsius = new RadioButton(this)
-    celsius.setText("Celsius")
-    celsius.setChecked(true)
-    radioGroup.addView(celsius, defaultLayoutParams)
-
-    val fahrenheit = new RadioButton(this)
-    fahrenheit.setText("Fahrenheit")
-    radioGroup.addView(fahrenheit, defaultLayoutParams)
-
-    val kelvin = new RadioButton(this)
-    kelvin.setText("Kelvin")
-    radioGroup.addView(kelvin, defaultLayoutParams)
-
-    layout.addView(radioGroup, defaultLayoutParams)
-
-    val convertButton = new Button(this)
-    convertButton.setText("Convert!")
-    layout.addView(convertButton, defaultLayoutParams)
-
-    setContentView(layout)
+    setContentView(R.layout.main)
   }
 }
