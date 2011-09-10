@@ -1,0 +1,8 @@
+Decaffeinated Android: Core Examples
+====================================
+
+This repository holds the source code for the examples from the book
+_Decaffeinated Android_, coming this fall from O'Reilly Media.
+
+
+// vim:set spell ft=asciidoc:

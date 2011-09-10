@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionName="1.0" android:versionCode="1"
+          package="com.decaffeinatedandroid.core.hello_android">
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="13"/>
+    <application android:label="Hello, Android!">
+        <activity android:label="Hello, Android!"
+                  android:name=".HelloActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
