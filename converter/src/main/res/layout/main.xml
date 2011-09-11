@@ -39,11 +39,12 @@
               android:layout_width="fill_parent"/>
     <RadioGroup android:layout_height="wrap_content"
                 android:layout_width="fill_parent"
-                android:orientation="vertical">
-        <RadioButton android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:checkedButton="@+id/celsius">
+        <RadioButton android:id="@id/celsius"
+                     android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
-                     android:text="Celsius"
-                     android:checked="true"/>
+                     android:text="Celsius"/>
         <RadioButton android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
                      android:text="Fahrenheit"/>
