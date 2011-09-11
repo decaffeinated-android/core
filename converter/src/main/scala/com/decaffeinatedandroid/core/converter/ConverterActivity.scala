@@ -35,6 +35,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 
 class ConverterActivity extends Activity {
   /** Log tag for this activity. */
@@ -47,6 +48,19 @@ class ConverterActivity extends Activity {
 
   /** Handles a click of the 'Convert!' button from the UI. */
   def convert(view: View) {
-    Log.v(TAG, "User wants a conversion")
+    val temp = getTempValue
+    Log.v(TAG, "User wants to convert "+temp)
+  }
+
+  /** Gets the temperature value from the entry box in the user interface.
+    * For now, all erroneous values are simply turned to zero. */
+  def getTempValue: Double = {
+    val editText = findViewById(R.id.input_temp).asInstanceOf[EditText]
+    val input = editText.getText.toString
+    try {
+      input.toDouble
+    } catch {
+      case _ => 0.0
+    }
   }
 }

@@ -35,7 +35,8 @@
               android:layout_height="fill_parent"
               android:layout_width="fill_parent"
               android:orientation="vertical">
-    <EditText android:layout_height="wrap_content"
+    <EditText android:id="@+id/input_temp"
+              android:layout_height="wrap_content"
               android:layout_width="fill_parent"/>
     <RadioGroup android:layout_height="wrap_content"
                 android:layout_width="fill_parent"
@@ -44,7 +45,7 @@
         <RadioButton android:id="@id/celsius"
                      android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
-		     android:text="@string/celsius"/>
+                     android:text="@string/celsius"/>
         <RadioButton android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
                      android:text="@string/fahrenheit"/>
