@@ -53,5 +53,6 @@
     </RadioGroup>
     <Button android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            android:text="@string/convert"/>
+            android:text="@string/convert"
+            android:onClick="convert"/>
 </LinearLayout>

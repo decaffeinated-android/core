@@ -33,10 +33,20 @@ package com.decaffeinatedandroid.core.converter
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 
 class ConverterActivity extends Activity {
+  /** Log tag for this activity. */
+  val TAG = "Converter"
+
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main)
+  }
+
+  /** Handles a click of the 'Convert!' button from the UI. */
+  def convert(view: View) {
+    Log.v(TAG, "User wants a conversion")
   }
 }
