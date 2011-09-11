@@ -55,8 +55,8 @@ class ConverterActivity extends Activity {
 
     val celsius = new RadioButton(this)
     celsius.setText("Celsius")
-    celsius.setChecked(true)
     radioGroup.addView(celsius, defaultLayoutParams)
+    radioGroup.check(celsius.getId)
 
     val fahrenheit = new RadioButton(this)
     fahrenheit.setText("Fahrenheit")
