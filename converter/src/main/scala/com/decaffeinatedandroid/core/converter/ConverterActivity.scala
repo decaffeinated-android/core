@@ -35,7 +35,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
+import android.widget.{RadioGroup, EditText}
 
 class ConverterActivity extends Activity {
   /** Log tag for this activity. */
@@ -48,8 +48,13 @@ class ConverterActivity extends Activity {
 
   /** Handles a click of the 'Convert!' button from the UI. */
   def convert(view: View) {
-    val temp = getTempValue
-    Log.v(TAG, "User wants to convert "+temp)
+    val tempValue = getTempValue
+    val scaleGroup = findViewById(R.id.scale_group).asInstanceOf[RadioGroup]
+    scaleGroup.getCheckedRadioButtonId match {
+      case R.id.celsius    => convertFromCelsius(tempValue)
+      case R.id.fahrenheit => convertFromFahrenheit(tempValue)
+      case R.id.kelvin     => convertFromKelvin(tempValue)
+    }
   }
 
   /** Gets the temperature value from the entry box in the user interface.
@@ -62,5 +67,32 @@ class ConverterActivity extends Activity {
     } catch {
       case _ => 0.0
     }
+  }
+
+  /** Handles conversion from a temperature in Celsius. */
+  def convertFromCelsius(celsius: Double) {
+    Log.v(TAG, "Converting from Celsius " + celsius)
+    val fahrenheit = (celsius * 9 / 5) + 32
+    val kelvin = celsius + 273.15
+    Log.v(TAG, "  Fahrenheit = " + fahrenheit)
+    Log.v(TAG, "  Kelvin = " + kelvin)
+  }
+
+  /** Handles conversion from a temperature in Fahrenheit. */
+  def convertFromFahrenheit(fahrenheit: Double) {
+    Log.v(TAG, "Converting from Fahrenheit " + fahrenheit)
+    val celsius = (fahrenheit - 32) * 5 / 9
+    val kelvin = (fahrenheit + 459.67) * 5 / 9
+    Log.v(TAG, "  Celsius = " + celsius)
+    Log.v(TAG, "  Kelvin = " + kelvin)
+  }
+
+  /** Handles conversion from a temperature in Kelvin. */
+  def convertFromKelvin(kelvin: Double) {
+    Log.v(TAG, "Converting from Kelvin: " + kelvin)
+    val celsius = kelvin - 273.15
+    val fahrenheit = (kelvin * 9 / 5) - 459.67
+    Log.v(TAG, "  Celsius = " + celsius)
+    Log.v(TAG, "  Fahrenheit = " + fahrenheit)
   }
 }

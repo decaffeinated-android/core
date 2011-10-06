@@ -38,7 +38,8 @@
     <EditText android:id="@+id/input_temp"
               android:layout_height="wrap_content"
               android:layout_width="fill_parent"/>
-    <RadioGroup android:layout_height="wrap_content"
+    <RadioGroup android:id="@+id/scale_group"
+                android:layout_height="wrap_content"
                 android:layout_width="fill_parent"
                 android:orientation="vertical"
                 android:checkedButton="@+id/celsius">
@@ -46,10 +47,12 @@
                      android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
                      android:text="@string/celsius"/>
-        <RadioButton android:layout_height="wrap_content"
+        <RadioButton android:id="@+id/fahrenheit"
+                     android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
                      android:text="@string/fahrenheit"/>
-        <RadioButton android:layout_height="wrap_content"
+        <RadioButton android:id="@+id/kelvin"
+                     android:layout_height="wrap_content"
                      android:layout_width="fill_parent"
                      android:text="@string/kelvin"/>
     </RadioGroup>
