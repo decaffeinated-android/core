@@ -60,4 +60,7 @@
             android:layout_width="fill_parent"
             android:text="@string/convert"
             android:onClick="convert"/>
+    <TextView android:id="@+id/result"
+              android:layout_height="wrap_content"
+              android:layout_width="fill_parent"/>
 </LinearLayout>

@@ -33,7 +33,11 @@
 
 <resources>
     <string name="celsius">Celsius</string>
+    <string name="celsius_format">%.2f°C</string>
     <string name="convert">Convert!</string>
     <string name="fahrenheit">Fahrenheit</string>
+    <string name="fahrenheit_format">%.2f°F</string>
     <string name="kelvin">Kelvin</string>
+    <string name="kelvin_format">%.2fK</string>
+    <string name="result">The temperature %1$s is %2$s and %3$s.</string>
 </resources>

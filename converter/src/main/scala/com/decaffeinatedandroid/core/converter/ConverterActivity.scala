@@ -35,7 +35,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.{RadioGroup, EditText}
+import android.widget._
 
 class ConverterActivity extends Activity {
   /** Log tag for this activity. */
@@ -74,8 +74,8 @@ class ConverterActivity extends Activity {
     Log.v(TAG, "Converting from Celsius " + celsius)
     val fahrenheit = (celsius * 9 / 5) + 32
     val kelvin = celsius + 273.15
-    Log.v(TAG, "  Fahrenheit = " + fahrenheit)
-    Log.v(TAG, "  Kelvin = " + kelvin)
+    showConversion(formatCelsius(celsius), formatFahrenheit(fahrenheit),
+      formatKelvin(kelvin))
   }
 
   /** Handles conversion from a temperature in Fahrenheit. */
@@ -83,8 +83,8 @@ class ConverterActivity extends Activity {
     Log.v(TAG, "Converting from Fahrenheit " + fahrenheit)
     val celsius = (fahrenheit - 32) * 5 / 9
     val kelvin = (fahrenheit + 459.67) * 5 / 9
-    Log.v(TAG, "  Celsius = " + celsius)
-    Log.v(TAG, "  Kelvin = " + kelvin)
+    showConversion(formatFahrenheit(fahrenheit), formatCelsius(celsius),
+      formatKelvin(kelvin))
   }
 
   /** Handles conversion from a temperature in Kelvin. */
@@ -92,7 +92,34 @@ class ConverterActivity extends Activity {
     Log.v(TAG, "Converting from Kelvin: " + kelvin)
     val celsius = kelvin - 273.15
     val fahrenheit = (kelvin * 9 / 5) - 459.67
-    Log.v(TAG, "  Celsius = " + celsius)
-    Log.v(TAG, "  Fahrenheit = " + fahrenheit)
+    showConversion(formatKelvin(kelvin), formatCelsius(celsius),
+      formatFahrenheit(fahrenheit))
+  }
+
+  /** Formats a temperature in Celsius to a suitable string. */
+  def formatCelsius(temp: Double) = {
+    formatTemp(temp, R.string.celsius_format)
+  }
+
+  /** Formats a temperature in Fahrenheit to a suitable string. */
+  def formatFahrenheit(temp: Double) = {
+    formatTemp(temp, R.string.fahrenheit_format)
+  }
+
+  /** Formats a temperature in Kelvin to a suitable string. */
+  def formatKelvin(temp: Double) = {
+    formatTemp(temp, R.string.kelvin_format)
+  }
+
+  /** Formats the temperature given the format. */
+  def formatTemp(temp: Double, formatId: Int) = {
+    getString(formatId, temp.asInstanceOf[AnyRef])
+  }
+
+  /** Shows the conversion result to the user. */
+  def showConversion(from: String, to1: String, to2: String) {
+    val resultView = findViewById(R.id.result).asInstanceOf[TextView]
+    val resultString = getString(R.string.result, from, to1, to2);
+    resultView.setText(resultString)
   }
 }
