@@ -11,7 +11,7 @@ object Settings {
   )
 
   lazy val android = Settings.default ++ AndroidProject.androidSettings ++ Seq (
-    platformName in Android := "android-7"
+    platformName in Android := "android-8"
   )
 }
 
